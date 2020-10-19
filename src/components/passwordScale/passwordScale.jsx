@@ -13,6 +13,8 @@ class PasswordScale extends Component {
 
     Scale = (strength) => {
         switch (strength) {
+            case 0:
+                return 'empty'
             case 1:
                 return 'quite-bad'
             case 2:
@@ -35,7 +37,7 @@ class PasswordScale extends Component {
     render() {
         const { strength } = this.state
         return (
-            <div className={`password-strength${ this.Scale(strength)}`}>
+            <div className={`password-strength ${this.Scale(strength)}`}>
                 <span></span>
             </div>
         )
