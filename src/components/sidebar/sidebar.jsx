@@ -15,16 +15,14 @@ class Sidebar extends Component {
     }
 
     componentDidMount() {
-        this.ToggleMobileMenu()
+        const ToggleButton = document.querySelector('#toggle-sidebar')
+        const MobileMenu = document.querySelector('aside')
+        if (ToggleButton) ToggleButton.addEventListener('click', this.ToggleMobileMenu)
+        if (MobileMenu) MobileMenu.addEventListener('click', this.ToggleMobileMenu)
     }
 
     ToggleMobileMenu() {
-        const ToggleButton = document.querySelector('#toggle-sidebar')
-        if (ToggleButton) {
-            ToggleButton.addEventListener('click', () => {
-                this.setState({ draw: !this.state.draw })
-            })
-        }
+        this.setState({ draw: !this.state.draw })
     }
 
     render() {
