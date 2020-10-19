@@ -6,6 +6,7 @@
 
 .tabs>ul {
     display: flex;
+    align-items: center;
 }
 
 .tabs>ul>li {
@@ -15,7 +16,8 @@
 }
 
 .tabs>ul>li>a {
-    display: block;
+    display: flex;
+    align-items: center;
     padding: 7px 15px;
     border-radius: 30px;
     text-decoration: none;
@@ -24,11 +26,6 @@
 }
 
 .tabs>ul>li>a.active {
-    display: block;
-    padding: 7px 15px;
-    border-radius: 30px;
-    text-decoration: none;
-    color: var(--font-color);
     background: var(--accent-color);
 }
 

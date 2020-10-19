@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import './alert.css'
 
 //Importing icons
@@ -34,8 +35,8 @@ class Alert extends Component {
 }
 
 Alert.propTypes = {
-    type: Boolean,
-    message: String
+    type: PropTypes.bool.isRequired,
+    message: PropTypes.string.isRequired
 }
 
 export default Alert

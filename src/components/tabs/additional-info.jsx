@@ -40,7 +40,7 @@ function AdditionalInfo() {
                             <label htmlFor="lname">Change Last Name</label>
                             {errors.lname && touched.lname && <span>{errors.lname}</span>}
                             <input type="text" name="lname" id="lname" onChange={handleChange} onBlur={handleBlur} value={values.lname} placeholder="Change Last Name" />
-                            <label htmlFor="address">Change address (street, house number, postal code)</label>
+                            <label htmlFor="address">Change address <span>* street, house number, postal code</span></label>
                             {errors.address && touched.address && <span>{errors.address}</span>}
                             <input type="text" name="address" id="address" onChange={handleChange} onBlur={handleBlur} value={values.address} placeholder="Change address (street, house number, postal code)" />
                             <label htmlFor="country">Change country</label>

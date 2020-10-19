@@ -55,7 +55,7 @@
         font-size: 14px;
         border-radius: 4px;
         transition: .5s;
-        transform: translateY(-0);
+        transform: translateY(0);
         margin-bottom: 20px;
         position: fixed;
         width: calc(75% - 100px);
@@ -63,7 +63,7 @@
         left: calc(25% + 50px);
     }
     .alert.hide {
-        transform: translateY(-1000%);
+        transform: translateY(1000%);
     }
     .alert.error {
         background: #ffc4d0;

@@ -1,5 +1,5 @@
-import React from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import React, {Fragment} from 'react'
+import { Route, Switch } from 'react-router-dom'
 import './main.css'
 
 //Importing pages
@@ -9,18 +9,29 @@ import Company from '../../pages/company/company'
 import Settings from '../../pages/settings/settings'
 import News from '../../pages/news/news'
 import Analytics from '../../pages/analytics/analytics'
+import MainInfo from '../tabs/main-info'
+import AdditionalInfo from '../tabs/additional-info'
 
 function Main() {
     return (
         <main>
-            <Router>
-                <Route exact path='/account' component={Account} />
-                <Route exact path='/company' component={Company} />
-                <Route exact path='/settings' component={Settings} />
-                <Route exact path='/news' component={News} />
-                <Route exact path='/analytics' component={Analytics} />
+            <Switch>
+                <Route path='/account' component={Account} />
+                <Route path='/company' component={Company} />
+                <Route path='/settings'>
+                    <Settings>
+                        <Route component={({ match }) =>
+                            <Fragment>
+                                <Route path='/settings/advanced' component={AdditionalInfo} />
+                                <Route exact path='/settings' component={MainInfo} />
+                            </Fragment>
+                        } />
+                    </Settings>
+                </Route>
+                <Route path='/news' component={News} />
+                <Route path='/analytics' component={Analytics} />
                 <Route exact path='/' component={Dashboard} />
-            </Router>
+            </Switch>
         </main>
     )
 }
