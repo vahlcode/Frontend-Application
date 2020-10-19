@@ -35,7 +35,7 @@ class PasswordScale extends Component {
     render() {
         const { strength } = this.state
         return (
-            <div className={`password-strength${ this.Scale(strength)}`}>
+            <div className={`password-strength${this.Scale(strength)}`}>
                 <span></span>
             </div>
         )
