@@ -1,0 +1,48 @@
+.settings>.inner>.forms {
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+.settings>.inner>.forms form {
+    display: flex;
+    flex-direction: column;
+}
+
+.settings>.inner>.forms form>label {
+    margin-bottom: 5px;
+}
+
+.settings>.inner>.forms form>span {
+    margin-bottom: 10px;
+    display: block;
+    color: #f70015;
+    font-size: 14px;
+}
+
+.settings>.inner>.forms form>input {
+    font-family: 'Poppins', sans-serif;
+    padding: 15px 30px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 2px solid #F1F1F1;
+}
+
+.settings>.inner>.forms form>select {
+    font-family: 'Poppins', sans-serif;
+    padding: 15px 30px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 2px solid #F1F1F1;
+}
+
+.settings>.inner>.forms form>button {
+    font-family: 'Poppins', sans-serif;
+    padding: 15px 30px;
+    margin-bottom: 20px;
+    border-radius: 30px;
+    border: none;
+    background: var(--primary-color);
+    color: #F1F1F1;
+    align-self: flex-start;
+    cursor: pointer;
+}
