@@ -3,9 +3,36 @@ import { Formik } from 'formik';
 
 //Importing components
 import Alert from '../alert/alert'
+import PasswordScale from '../passwordScale/passwordScale'
 
 function MainInfo() {
     const [submitted, setSubmitted] = useState(false)
+    const [strength, setStrength] = useState(0)
+
+    const scalePassword = (password, strength) => {
+        if (password.length >= 8)
+            strength++;
+
+        let format = /[1-9]/;
+        if (format.test(password))
+            strength++;
+
+        format = /[A-Z]/;
+        if (format.test(password))
+            strength++;
+
+        format = /[a-z]/;
+        if (format.test(password))
+            strength++;
+
+        format = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+        if (format.test(password))
+            strength++;
+
+        setStrength(strength);
+
+    };
+    
     return (
         <section>
             <Formik
@@ -48,7 +75,21 @@ function MainInfo() {
                             <input type="email" name="email" id="email" onChange={handleChange} onBlur={handleBlur} value={values.email} placeholder="Change Email" />
                             <label htmlFor="password">Change Password</label>
                             {errors.password && touched.password && <span>{errors.password}</span>}
-                            <input type="password" name="password" id="password" onChange={handleChange} onBlur={handleBlur} value={values.password} placeholder="********" />
+                            {!errors.Password && !!strength &&
+                                <PasswordScale strength={strength} />
+                            }
+                            <input
+                                type="password"
+                                name="password"
+                                id="password"
+                                onChange={async (e) => {
+                                    handleChange(e);
+                                    await setStrength(0);
+                                    scalePassword(values.password, 0);
+                                }}
+                                onBlur={handleBlur}
+                                value={values.password}
+                                placeholder="********" />
                             <label htmlFor="re-password">Confirm Password</label>
                             {errors.rePassword && touched.rePassword && <span>{errors.rePassword}</span>}
                             <input type="password" name="rePassword" id="re-password" onChange={handleChange} onBlur={handleBlur} value={values.rePassword} placeholder="********" />

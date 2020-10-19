@@ -6,9 +6,9 @@ I have completed my task and made it available for preview online, click [Here](
 
 There are many ways this dashboard can be improved, I'll be listing some of the ones I've discovered while I was working on it.
 
-1. Visual password strength indicator.
+1. Better state management with Redux.
 
-If I'd be working again on this project or one related to this, I'll make sure that the password strength indicator is more visual, that is, it is capable of updating the user of the strength of the password they chooses to use while they type. This will be way powerful than the one I implemented because even after meeting the password character conditions (password field should accept Uppercase letters, lowercase letters, numbers and special characters) it still guides the user in choosing a stronger password that.
+If I'd be working again on this project or one related to this, I'll make sure to manage the shared states with Redux.
 
 2. Password Suggestion technology.
 
